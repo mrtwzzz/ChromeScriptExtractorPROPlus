@@ -11,7 +11,7 @@ ChromeScriptExtractor PRO+ er en kraftig Chrome Extension som utfører **full 1:
 
 ---
 
-## 📆 Generert innhold
+## 📦 Generert innhold
 
 - `/external/` – Nedlastede .js-filer
 - `/inline/` – Inline script-kode
@@ -56,25 +56,3 @@ ChromeScriptExtractor PRO+ er en kraftig Chrome Extension som utfører **full 1:
     { "tag": "DIV", "index": 12, "filename": "dynamic/dynamic_script_12.txt", "snippet_length": 300 }
   ]
 }
-```
-
----
-
-## ⚙️ Teknisk informasjon
-
-- JSZip brukes til å bygge `.zip`-pakken direkte i nettleseren
-- `chrome.downloads.download()` brukes for å lagre alle filer
-- Eval og dynamiske strukturer spores via `document.querySelectorAll('*')` + heuristikk
-
----
-
-## ☠️ Ansvarsfraskrivelse
-
-Dette verktøyet er kun for etisk bruk og sikkerhetsanalyse. Bruk skjer på eget ansvar.
-
----
-
-## 📄 Lisens
-
-MIT License
-
