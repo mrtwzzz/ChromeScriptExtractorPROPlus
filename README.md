@@ -1,41 +1,50 @@
-# ChromeScriptExtractorPROPlus
+# 🧠 ChromeScriptExtractor PRO+
 
-📄 README — ChromeScriptExtractorPROPlus
-========================================
+ChromeScriptExtractor PRO+ er en kraftig Chrome Extension som utfører **full 1:1 duplisering av JavaScript** fra enhver nettside.
 
-🧠 Formål:
-Fullstendig 1:1 script-duplikering fra nettsider, inkludert:
-- Eksterne scripts (<script src=...>)
-- Inline <script> innhold
-- Dynamiske eval() / innerHTML / injiserte scripts
+## ✨ Funksjoner
 
-📦 Innhold generert:
---------------------
-- /external/       → Nedlastede eksterne .js-filer
-- /inline/         → Inline scripts lagret som .txt
-- /dynamic/        → Eval, innerHTML eller funksjonelle scripts
-- metadata.json    → Informasjon om alle funn
-- warplus_scripts_extracted.zip → Alt samlet i én ZIP
+- ✅ Eksterne `<script src="...">` JavaScript-filer
+- ✅ Inline `<script>`-blokker
+- ✅ Eval(), innerHTML og dynamisk injisert JS (heuristisk deteksjon)
+- ✅ ZIP-pakking og metadata for analyse
 
-🛠️ Installasjon:
-------------------
-1. Pakk ut ChromeScriptExtractorPROPlus.zip
-2. Gå til chrome://extensions/
-3. Aktiver "Developer Mode"
-4. Klikk "Load unpacked" og velg den utpakkede mappen
+---
 
-🚀 Bruk:
----------
-1. Gå til ønsket nettside i Chrome
-2. Klikk på extension-ikonet
-3. Script-filer vil automatisk lastes ned:
-   - Eksterne -> /external/
-   - Inline    -> /inline/
-   - Dynamisk  -> /dynamic/
-4. metadata.json gir oversikt over alt som ble funnet
+## 📦 Generert innhold
 
-🧪 Eksempel fra metadata.json:
--------------------------------
+- `/external/` – Nedlastede .js-filer
+- `/inline/` – Inline script-kode
+- `/dynamic/` – Dynamiske eval()/innerHTML-scripts
+- `metadata.json` – Oversikt over funn
+- `warplus_scripts_extracted.zip` – Alt samlet
+
+---
+
+## 🛠️ Installasjon
+
+1. Last ned og pakk ut `ChromeScriptExtractorPROPlus.zip`
+2. Gå til `chrome://extensions/`
+3. Aktiver **Developer Mode**
+4. Klikk **"Load unpacked"**, og velg den utpakkede mappen
+
+---
+
+## 🚀 Bruk
+
+1. Naviger til en mål-nettside
+2. Klikk på extension-ikonet i Chrome
+3. Alle relevante scripts lastes ned automatisk:
+   - Eksterne JS → `/external/`
+   - Inline      → `/inline/`
+   - Dynamiske   → `/dynamic/`
+4. ZIP og metadata genereres automatisk
+
+---
+
+## 🧪 Eksempel: `metadata.json`
+
+```json
 {
   "external": [
     { "url": "https://cdn.example.com/app.js", "filename": "external/app.js", "size": 5823 }
@@ -47,13 +56,3 @@ Fullstendig 1:1 script-duplikering fra nettsider, inkludert:
     { "tag": "DIV", "index": 12, "filename": "dynamic/dynamic_script_12.txt", "snippet_length": 300 }
   ]
 }
-
-⚠️ Teknisk Merknad:
--------------------
-- ZIP bygges i bakgrunnen ved hjelp av JSZip
-- chrome.downloads API brukes for å lagre alle filer
-- Eval()/innerHTML spores gjennom tekstlig heuristikk
-
-☠️ Ansvarsfraskrivelse:
--------------------------
-Dette verktøyet er laget for etisk bruk, analyse og sikkerhetsformål. Bruk på eget ansvar.
